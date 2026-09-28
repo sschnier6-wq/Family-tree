@@ -2,7 +2,7 @@
    Sources: family Hofbuch, 1997 descendant chart, obituaries, passenger list,
    house plaque and cemetery photos from Dingstede, 2011 visit.
 */
-const APP_VERSION = "1.3.0";
+const APP_VERSION = "1.5.0";
 
 const PEOPLE = {
   hof: {
@@ -568,6 +568,7 @@ const GENERATION_LABELS = {
 const canvas = document.getElementById("treeCanvas");
 const ctx = canvas.getContext("2d");
 const panel = document.getElementById("panel");
+const modal = document.getElementById("modal");
 const searchBox = document.getElementById("search");
 const genFilter = document.getElementById("genFilter");
 
@@ -599,11 +600,18 @@ function layout() {
     cols[g].sort((a, b) => (order[a.id] ?? 50) - (order[b.id] ?? 50));
   });
   const gens = Object.keys(cols).map(Number).sort((a, b) => a - b);
-  const colW = 250;
-  const rowH = 86;
+  const cardW = 214;
+  const cardH = 66;
+  const colW = 232;
+  const rowH = 128;
+  const maxCount = Math.max(...gens.map((g) => cols[String(g)].length));
+  const treeW = maxCount * colW;
   gens.forEach((g, i) => {
-    cols[String(g)].forEach((p, j) => {
-      nodes[p.id] = { id: p.id, x: 70 + i * colW, y: 80 + j * rowH, w: 214, h: 66 };
+    const list = cols[String(g)];
+    const rowW = list.length * colW;
+    const startX = 80 + (treeW - rowW) / 2;
+    list.forEach((p, j) => {
+      nodes[p.id] = { id: p.id, x: startX + j * colW, y: 50 + i * rowH, w: cardW, h: cardH };
     });
   });
 }
@@ -612,9 +620,9 @@ function fitToSteven() {
   const n = nodes.steven;
   const w = canvas.clientWidth;
   const h = canvas.clientHeight;
-  view.scale = Math.min(1.0, Math.max(0.55, w / 1700));
-  view.x = w * 0.58 - (n.x + n.w / 2) * view.scale;
-  view.y = h * 0.38 - (n.y + n.h / 2) * view.scale;
+  view.scale = Math.min(1.05, Math.max(0.42, Math.min(w / 980, h / 720)));
+  view.x = w * 0.5 - (n.x + n.w / 2) * view.scale;
+  view.y = h * 0.42 - (n.y + n.h / 2) * view.scale;
 }
 
 function worldFromEvent(e) {
@@ -650,6 +658,18 @@ function draw() {
   const q = searchBox.value.trim().toLowerCase();
   const gf = genFilter.value;
 
+  const rowYs = {};
+  Object.values(nodes).forEach((n) => {
+    const g = String(PEOPLE[n.id].generation);
+    if (rowYs[g] == null) rowYs[g] = n.y;
+  });
+  Object.keys(rowYs).forEach((g) => {
+    ctx.fillStyle = "rgba(232, 215, 160, 0.55)";
+    ctx.font = "600 12px 'Source Serif 4', Georgia, serif";
+    const label = GENERATION_LABELS[g] || g;
+    ctx.fillText(label, 16, rowYs[g] + 18);
+  });
+
   LINKS.forEach((l) => {
     const a = nodes[l.from];
     const b = nodes[l.to];
@@ -659,19 +679,19 @@ function draw() {
     ctx.lineWidth = l.type === "spouse" ? 2.2 : 1.5;
     ctx.setLineDash(l.dashed ? [6, 5] : []);
     if (l.type === "spouse") {
-      const y = Math.min(a.y, b.y) + Math.abs(a.y - b.y) / 2 + a.h / 2;
-      ctx.moveTo(a.x + a.w / 2, a.y + a.h);
-      ctx.lineTo(a.x + a.w / 2, y);
-      ctx.lineTo(b.x + b.w / 2, y);
-      ctx.lineTo(b.x + b.w / 2, b.y + b.h);
+      const left = a.x < b.x ? a : b;
+      const right = a.x < b.x ? b : a;
+      const y = left.y + left.h / 2;
+      ctx.moveTo(left.x + left.w, y);
+      ctx.lineTo(right.x, y);
     } else {
-      const ax = a.x + a.w;
-      const ay = a.y + a.h / 2;
-      const bx = b.x;
-      const by = b.y + b.h / 2;
-      const mx = (ax + bx) / 2;
+      const ax = a.x + a.w / 2;
+      const ay = a.y + a.h;
+      const bx = b.x + b.w / 2;
+      const by = b.y;
+      const my = (ay + by) / 2;
       ctx.moveTo(ax, ay);
-      ctx.bezierCurveTo(mx, ay, mx, by, bx, by);
+      ctx.bezierCurveTo(ax, my, bx, my, bx, by);
     }
     ctx.stroke();
     ctx.setLineDash([]);
@@ -724,7 +744,7 @@ function renderPanel(id) {
     .join("");
   panel.innerHTML = `
     <p class="kicker">${esc(GENERATION_LABELS[String(p.generation)] || "")}</p>
-    <h2>${esc(p.name)}</h2>
+    <h2 id="personName">${esc(p.name)}</h2>
     <p class="dates">${esc(p.dates)}</p>
     <div class="role">${esc(p.role)}</div>
     <p class="bio">${esc(p.bio)}</p>
@@ -740,11 +760,27 @@ function esc(s) {
   return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
 
-function select(id) {
+function openModal() {
+  modal.classList.add("is-open");
+  modal.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+}
+function closeModal() {
+  modal.classList.remove("is-open");
+  modal.setAttribute("aria-hidden", "true");
+}
+function select(id, open = true) {
   selected = id;
   renderPanel(id);
   draw();
+  if (open) openModal();
 }
+
+document.getElementById("modalClose").addEventListener("click", closeModal);
+document.getElementById("modalBackdrop").addEventListener("click", closeModal);
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeModal();
+});
 
 canvas.addEventListener("mousedown", (e) => {
   dragging = true;
@@ -901,7 +937,7 @@ async function trackVisits() {
 }
 
 layout();
-select("steven");
+select("steven", false);
 setMeta(null);
 trackVisits();
 window.addEventListener("resize", resize);

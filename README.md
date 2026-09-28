@@ -1,27 +1,16 @@
 # Schnier Family Tree
 
-Static family tree for **GitHub Pages**. No build step.
-
-Version: **1.3.0**  
-Starting person: **Steven Dale Schnier** (born June 17, 1972).
+Version **1.5.0**. Static site for GitHub Pages.
 
 ## Publish
 
-1. Unzip. You should see `index.html`, `app.js`, `styles.css`, and the `.jpg` files in the **same folder**.
-2. Create a public GitHub repository.
-3. Select all of those files and upload them to the **repo root** (do not nest them in another folder).
-4. Repo **Settings → Pages → Deploy from a branch → `main` / `/ (root)`**.
-5. Site: `https://YOURUSER.github.io/REPO/`
+Unzip. Upload every file in this folder to the **root** of a public GitHub repo (`index.html` must sit at the repo root, not inside another folder).
 
-The header shows `v1.3.0` and a visit count (shared across everyone who opens the live page).
+Repo Settings → Pages → Deploy from a branch → `main` / `/ (root)`.
 
-## What’s in the tree
+On your iPhone, confirm the header says **v1.5.0**. If it still says 1.3.0 or 1.4.0, Safari has the old files cached: close the tab, then open the Pages URL with `?v=1.5.0` on the end once.
 
-- Dingstede Hofbuch (farm holders from 1576)
-- Johann Gerhard Schnier (1853–1934) and the diphtheria years
-- Gerhard Hinrich Schnier (1884–1978): Kaiser Wilhelm der Grosse, New York 26 June 1907
-- 7 July 1997 descendant chart down to Steven & Lori
-- Children: Jacob, then triplets Julia, Christian (Texas Tech) and Annalise (Arkansas EE); all Plano East
-- Oehlerts line of Remsen: Herman & Mary → Sylvester & Eleanor → Sandra
+## Use
 
-Edit names and bios in `app.js`. Put new images next to `index.html` and add the filename to that person’s `photos` array.
+- Tree runs **top to bottom**: oldest generations above, Jacob and the triplets below.
+- Tap a name for a **popup biography**. Close with the **×** or by tapping the dark area.

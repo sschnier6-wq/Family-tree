@@ -4,22 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="theme-color" content="#1a1612" />
   <meta name="format-detection" content="telephone=no" />
   <title>Schnier Family Tree — Steven Dale Schnier</title>
-  <meta name="description" content="Interactive family tree centered on Steven Dale Schnier, born 17 June 1972. Static site for GitHub Pages." />
+  <meta name="description" content="Interactive family tree centered on Steven Dale Schnier, born 17 June 1972." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=1.5.0" />
 </head>
 <body>
   <header>
     <div class="brand">
       <h1>The Schnier Family Tree</h1>
       <p>Schnier of Dingstede · Oehlerts of Remsen · Steven Dale Schnier, b. 17 June 1972</p>
-      <p class="meta" id="appMeta">v1.3.0 · visits —</p>
+      <p class="meta" id="appMeta">v1.5.0 · visits —</p>
     </div>
     <div class="controls">
       <input id="search" type="search" placeholder="Search a name…" autocomplete="off" enterkeyhint="search" />
@@ -38,15 +39,25 @@
       <button id="resetView" type="button">Reset view</button>
     </div>
   </header>
+
   <main>
     <div class="stage-wrap">
       <canvas id="treeCanvas"></canvas>
-      <div class="hint">Drag to pan · pinch to zoom · tap a name for the biography</div>
+      <div class="hint">Drag to pan · pinch to zoom · tap a name</div>
     </div>
-    <aside>
-      <div id="panel" class="panel"></div>
-    </aside>
   </main>
-  <script src="app.js"></script>
+
+  <div id="modal" class="modal" aria-hidden="true">
+    <button type="button" class="modal-backdrop" id="modalBackdrop" aria-label="Close biography"></button>
+    <div class="modal-sheet" role="dialog" aria-modal="true" aria-labelledby="personName">
+      <div class="modal-bar">
+        <span class="modal-bar-label">Biography</span>
+        <button id="modalClose" class="modal-close" type="button" aria-label="Close">×</button>
+      </div>
+      <div id="panel" class="panel"></div>
+    </div>
+  </div>
+
+  <script src="app.js?v=1.5.0"></script>
 </body>
 </html>
