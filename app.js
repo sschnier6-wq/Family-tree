@@ -2,6 +2,7 @@
    Sources: family Hofbuch, 1997 descendant chart, obituaries, passenger list,
    house plaque and cemetery photos from Dingstede, 2011 visit.
 */
+const APP_VERSION = "1.3.0";
 
 const PEOPLE = {
   hof: {
@@ -10,7 +11,7 @@ const PEOPLE = {
     dates: "recorded from 1576",
     role: "Baumanns of Dingstede · Oldenburg",
     generation: -4,
-    photos: ["photos/farm-sign.jpg", "photos/grave-plaque.jpg"],
+    photos: ["farm-sign.jpg", "grave-plaque.jpg"],
     bio: "The Schnier farm at Dingstede (today a hamlet of Hatten, Landkreis Oldenburg, Lower Saxony) is documented in the family Hofbuch compiled for Heinz-Georg Schnier. The village itself appears in 1249 as Thingenstede — a thing-stead, a court place. Schnier / Schnieder / Snier men are listed there as Baumanns (farm holders) from the late 1500s: Dirich Snier in the Hatter corn-tax roll 1576–1585, then a continuous male line of farm heirs through the Thirty Years’ War, the 18th-century Grunderbe (heir-farm) system, and the 19th century. The house plaque still reads “J. Schnier Dingstede.” The cemetery stone reads “Ruhestätte der Familie Schnier · Dingstede.”",
     facts: [
       "1576–1585 Dirich Snier, Hatter corn-tax (Kornschuld).",
@@ -48,7 +49,7 @@ const PEOPLE = {
     dates: "1853 – 1934",
     role: "Baumann · “Grandpa Schnier” of the farm notes",
     generation: -2,
-    photos: ["photos/grave-plaque.jpg"],
+    photos: ["grave-plaque.jpg"],
     bio: "Johann Gerhard Schnier, farmer, born 1853, died 1934. In 1878 he married Anna Sophie Margarete Tönjes of Hurrel (born 1855, died 1924), daughter of Gerd Hinrich Tönjes of Hurrel. They raised a large family on the Dingstede farm. Diphtheria in the early 1890s killed several of their children. Two sons left for America: Gerhard Hinrich in 1907 and Johann Gerhard a few years later. A family note records that Anna Sophie — grandpa’s sister, by then an old woman in Dingstede — answered the door when relatives visited in late 1971 or early 1972.",
     facts: [
       "Married 1878, Anna Sophie Margarete Tönjes of Hurrel, *1855 †1924.",
@@ -76,7 +77,7 @@ const PEOPLE = {
     dates: "1878 – 1954",
     role: "Grunderbe who stayed in Dingstede",
     generation: -1,
-    photos: ["photos/hof-then-now.jpg"],
+    photos: ["hof-then-now.jpg"],
     bio: "Eldest son. He kept the home farm. First wife Regine Catharine Bruns of Hockensberg (*1887 †1922); children Merry, twins Georg Johann and Anneliese (1914), and Hans. Second wife Emma Osterthun of Munderloh (*1884 †1952), no children. Georg Johann (*1914 †1971) later held the farm with Lisa Wilhelmine Stolle; their son Heinz-Georg still lived on the Hof when the family book was compiled. The house was split into two dwellings in 1980.",
     facts: [
       "Twin grandchildren of this branch include Kai and Torben Marschall (1977).",
@@ -90,7 +91,7 @@ const PEOPLE = {
     dates: "21 Oct 1884 – 28 Apr 1978",
     role: "Emigrant of 1907 · Bancroft / Pender farmer",
     generation: -1,
-    photos: ["photos/family-portrait.jpg"],
+    photos: ["family-portrait.jpg"],
     bio: "Born 21 October 1884 at Dingstede, Oldenburg. At 22 he sailed from Bremen on the Kaiser Wilhelm der Grosse and landed at New York on 26 June 1907. The passenger list gives birthplace as “pingstede” (Dingstede). He married Adeline Henriette von Seggern on 29 August 1912. They farmed in Thurston County until 1919, then on a farm northwest of Bancroft, Cuming County. He belonged to St. Mark’s Lutheran Church in Pender and served on the council. He died 28 April 1978 at Valley View Nursing Home in Pender, age 93, and is buried at St. Mark’s Cemetery. Pallbearers included his grandson Dale Schnier.",
     facts: [
       "Ship: Kaiser Wilhelm der Grosse, Bremen → New York, 26 June 1907. NARA T715 roll 930, page 106, line 18.",
@@ -112,7 +113,7 @@ const PEOPLE = {
     dates: "20 Jun 1892 – 19 Mar 1974",
     role: "Nebraska-born · Oldenburg roots",
     generation: -1,
-    photos: ["photos/family-portrait.jpg"],
+    photos: ["family-portrait.jpg"],
     bio: "Adeline (“Lena”) Henriette von Seggern was born 20 June 1892 in Thurston County, Nebraska, to Johann Diedrich von Seggern (born 9 August 1857 at Hohenböken / Ganderkesee, Oldenburg) and Caroline Faubel (born 10 October 1869 in Cleveland, Ohio). The von Seggerns and Schniers had already intermarried in the Oldenburg villages — Wendel Rodiek Schnieder married a von Seggern of Hohenböken in 1748. Adeline married Gerhard on 29 August 1912, raised six children on the Bancroft farm, and died 19 March 1974 at Pender. She is the seated woman with the corsage in the mid-century family portrait.",
     facts: [
       "Parents married 12 March 1887 at West Point, Cuming County, Nebraska.",
@@ -147,7 +148,7 @@ const PEOPLE = {
     dates: "1889 – 1972",
     role: "Sister who stayed · Dingstede",
     generation: -1,
-    photos: ["photos/osterloh-hof.jpg", "photos/sportverein.jpg"],
+    photos: ["osterloh-hof.jpg", "sportverein.jpg"],
     bio: "Anna Sophie Schnier married Wilhelm Osterloh of Dingstede (*1881 †1939) in 1910. They lived on the Osterloh Hof, a brick Gulfhaus that burned 17 July 1900 and was rebuilt; Wilhelm bought it in 1908. Family notes say she answered the door when American relatives visited Dingstede in late 1971 or early 1972. She died in 1972. B. Schnier and F. Schnier were among the 37 founders of the Dingstede sports club Einigkeit on 9 February 1921.",
     facts: [
       "Osterloh Hof photo shows the family with horses in front of the rebuilt gable.",
@@ -226,7 +227,7 @@ const PEOPLE = {
     dates: "1878 – 1962",
     role: "of Tama, then Plymouth County, Iowa",
     generation: -1,
-    photos: ["photos/herman-mary-stone.jpg"],
+    photos: ["herman-mary-stone.jpg"],
     bio: "Herman Henry Oehlerts was born 1878 in Tama County, Iowa. He married Mary Spiecker (also 1878, Benton County, Iowa) at Plymouth County. They farmed and lived in Plymouth County and are buried together at Remsen Community Cemetery under a pink granite double stone: Herman 1878–1962, Mary 1878–1962. Ancestry trees in the family papers give his father as born 1834 and his mother as born 1843 — matching Caroline Oehlerts (1844–1923) also buried at Remsen.",
     facts: [
       "Birth: Tama County, Iowa, 1878.",
@@ -246,7 +247,7 @@ const PEOPLE = {
     dates: "1878 – 1962",
     role: "of Benton County · Herman’s wife",
     generation: -1,
-    photos: ["photos/herman-mary-stone.jpg"],
+    photos: ["herman-mary-stone.jpg"],
     bio: "Mary Spiecker was born 1878 in Benton County, Iowa. Ancestry trees list her father as born 1842 and her mother as born 1841. She married Herman Henry Oehlerts in Plymouth County. Her brother Henry Spiecker (c. 1876–1952), an unmarried retired farmer, died at Sacred Heart Hospital in Le Mars; the obituary names Mrs. Herman Oehlerts of Remsen as his sister. Mary and Herman died the same year, 1962, and share a stone at Remsen.",
     facts: [
       "Birth: 1878, Benton County, Iowa.",
@@ -261,7 +262,7 @@ const PEOPLE = {
     dates: "1911 – 1987",
     role: "of Remsen · Sandra’s father",
     generation: 0,
-    photos: ["photos/sylvester-eleanor-stone.jpg", "photos/sylvester-eleanor-stone-2.jpg"],
+    photos: ["sylvester-eleanor-stone.jpg", "sylvester-eleanor-stone-2.jpg"],
     bio: "Sylvester Hans Henry Oehlerts was born 1911 in Plymouth County, Iowa, son of Herman Henry Oehlerts and Mary Spiecker. He married Eleanor Marie Moritz (1914–1996) in Cherokee County, Iowa. They lived at Remsen — the June 1966 clippings are addressed to Sylvester Oehlerts, Rt. 3, Remsen. He died in 1987 and is buried with Eleanor at Remsen Community Cemetery, Block 2 East, Lot 25.",
     facts: [
       "Birth: 1911, Plymouth County.",
@@ -281,7 +282,7 @@ const PEOPLE = {
     dates: "1914 – 1996",
     role: "of Remsen · Sandra’s mother",
     generation: 0,
-    photos: ["photos/sylvester-eleanor-stone.jpg", "photos/sylvester-eleanor-stone-2.jpg"],
+    photos: ["sylvester-eleanor-stone.jpg", "sylvester-eleanor-stone-2.jpg"],
     bio: "Eleanor Marie Moritz was born 1914. She married Sylvester Hans Henry Oehlerts in Cherokee County. They raised their family at Remsen, including John Herman (1947–1966), a daughter who by 1966 was Mrs. William Monfore of Greeley, Colorado, and Sandra (Sandy), later mother of Steven Dale Schnier. Eleanor died in 1996. The double stone at Remsen reads Eleanor 1914–1996 / Sylvester 1911–1987.",
     facts: [
       "Maiden name Moritz, per Ancestry trees in the family papers.",
@@ -296,7 +297,7 @@ const PEOPLE = {
     dates: "1 Feb 1947 – 1966",
     role: "Sandra’s brother · killed on Highway 3",
     generation: 1,
-    photos: ["photos/john-oehlerts-stone.jpg", "photos/crash-clipping.jpg", "photos/crash-clipping-2.jpg"],
+    photos: ["john-oehlerts-stone.jpg", "crash-clipping.jpg", "crash-clipping-2.jpg"],
     bio: "John Herman Oehlerts was born 1 February 1947 at Remsen. He graduated from Remsen High School in May 1965 and was working as a machinist at Cherokee. Late on a Saturday night he was a passenger in a Pontiac driven westbound by Gary Fiedler, 20, of Remsen, when it met a Rambler driven by David E. Preston, 32, of Cleghorn, head-on on Highway 3 about a mile and a half east of the Marcus junction. John and Preston were killed. Four other Remsen-area young men in the two cars were injured. Funeral services were at St. Paul Evangelical Lutheran Church, Remsen, Rev. Paul Wuebben officiating; burial in Remsen City Cemetery under direction of Moeller Funeral Home. Survivors named in the paper: parents Mr. and Mrs. Sylvester H. Oehlerts of Remsen, and a sister, Mrs. William Monfore of Greeley, Colorado.",
     facts: [
       "Born 1 February 1947, Remsen.",
@@ -794,11 +795,120 @@ document.getElementById("focusSteven").addEventListener("click", () => {
   draw();
 });
 
+function touchPoint(t) {
+  return { clientX: t.clientX, clientY: t.clientY };
+}
+function pinchDistance(a, b) {
+  const dx = a.clientX - b.clientX;
+  const dy = a.clientY - b.clientY;
+  return Math.hypot(dx, dy);
+}
+let pinchStart = null;
+
+canvas.addEventListener("touchstart", (e) => {
+  if (e.touches.length === 1) {
+    dragging = true;
+    moved = false;
+    last = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+    pinchStart = null;
+  } else if (e.touches.length === 2) {
+    dragging = false;
+    pinchStart = {
+      dist: pinchDistance(e.touches[0], e.touches[1]),
+      scale: view.scale,
+      midX: (e.touches[0].clientX + e.touches[1].clientX) / 2,
+      midY: (e.touches[0].clientY + e.touches[1].clientY) / 2
+    };
+  }
+}, { passive: true });
+
+canvas.addEventListener("touchmove", (e) => {
+  e.preventDefault();
+  if (e.touches.length === 2 && pinchStart) {
+    const dist = pinchDistance(e.touches[0], e.touches[1]);
+    const next = Math.min(2.2, Math.max(0.4, pinchStart.scale * (dist / pinchStart.dist)));
+    const r = canvas.getBoundingClientRect();
+    const mx = pinchStart.midX - r.left;
+    const my = pinchStart.midY - r.top;
+    const wx = (mx - view.x) / view.scale;
+    const wy = (my - view.y) / view.scale;
+    view.scale = next;
+    view.x = mx - wx * next;
+    view.y = my - wy * next;
+    draw();
+    return;
+  }
+  if (dragging && e.touches.length === 1) {
+    const t = e.touches[0];
+    const dx = t.clientX - last.x;
+    const dy = t.clientY - last.y;
+    if (Math.abs(dx) + Math.abs(dy) > 3) moved = true;
+    view.x += dx;
+    view.y += dy;
+    last = { x: t.clientX, y: t.clientY };
+    draw();
+  }
+}, { passive: false });
+
+canvas.addEventListener("touchend", (e) => {
+  if (e.touches.length === 0) {
+    if (dragging && !moved && last) {
+      const fake = { clientX: last.x, clientY: last.y };
+      const n = hit(worldFromEvent(fake));
+      if (n) select(n.id);
+    }
+    dragging = false;
+    pinchStart = null;
+  }
+});
+
+function formatCount(n) {
+  return Number(n).toLocaleString("en-US");
+}
+
+function setMeta(visits) {
+  const el = document.getElementById("appMeta");
+  if (!el) return;
+  const visitText = visits == null ? "visits —" : (visits === 1 ? "1 visit" : `${formatCount(visits)} visits`);
+  el.textContent = `v${APP_VERSION} · ${visitText}`;
+}
+
+async function trackVisits() {
+  setMeta(null);
+  const key = "schnier-tree-visits";
+  const endpoints = [
+    "https://abacus.jasoncameron.dev/hit/schnier-family-tree/visits",
+    "https://api.counterapi.dev/v2/steveschnier/family-tree/up"
+  ];
+  for (const url of endpoints) {
+    try {
+      const res = await fetch(url, { cache: "no-store" });
+      if (!res.ok) continue;
+      const data = await res.json();
+      const n = data.value ?? data.count ?? data.hits ?? data;
+      if (typeof n === "number" && n >= 0) {
+        localStorage.setItem(key, String(n));
+        setMeta(n);
+        return;
+      }
+    } catch (err) {
+      /* try next */
+    }
+  }
+  const local = Number(localStorage.getItem(key) || "0") + 1;
+  localStorage.setItem(key, String(local));
+  setMeta(local);
+}
+
 layout();
 select("steven");
+setMeta(null);
+trackVisits();
 window.addEventListener("resize", resize);
+window.addEventListener("orientationchange", () => setTimeout(resize, 250));
 requestAnimationFrame(() => {
   resize();
   fitToSteven();
   draw();
 });
+
