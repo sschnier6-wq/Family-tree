@@ -2,7 +2,7 @@
    Sources: family Hofbuch, 1997 descendant chart, obituaries, passenger list,
    house plaque and cemetery photos from Dingstede, 2011 visit.
 */
-const APP_VERSION = "1.5.0";
+const APP_VERSION = "1.5.1";
 
 const PEOPLE = {
   hof: {
@@ -337,7 +337,7 @@ const PEOPLE = {
     dates: "† before July 1997",
     role: "Brother of Dale",
     generation: 1,
-    bio: "Third son of Gerald and Delora. Marked deceased on the 1997 chart. Married Jannis. Children Jonnie (married Jim Albin; children Addison and Jaxson) and Jasey.",
+    bio: "Third son of Gerald and Delora. Marked deceased on the 1997 chart. Married Tanice. Children Jonnie (married Jim Albin; children Addison and Jaxson) and Jasey.",
     facts: ["The + beside his name is the chart’s mark for verstorben."],
     sources: ["1997 descendant chart; Delora obituary."]
   },
