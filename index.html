@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Schnier Family Tree — Steven Dale Schnier</title>
+  <meta name="description" content="Interactive family tree centered on Steven Dale Schnier, born 17 June 1972. Static site for GitHub Pages." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <h1>The Schnier Family Tree</h1>
+      <p>Schnier of Dingstede · Oehlerts of Remsen · Steven Dale Schnier, b. 17 June 1972</p>
+    </div>
+    <div class="controls">
+      <input id="search" type="search" placeholder="Search a name…" autocomplete="off" />
+      <select id="genFilter" aria-label="Filter generation">
+        <option value="">All generations</option>
+        <option value="-4">Dingstede Hof</option>
+        <option value="-3">19th-century heir</option>
+        <option value="-2">Johann Gerhard</option>
+        <option value="-1">1907 generation</option>
+        <option value="0">G. H.’s children</option>
+        <option value="1">Gerald’s sons</option>
+        <option value="2">Steven’s generation</option>
+        <option value="3">Jacob and the triplets</option>
+      </select>
+      <button id="focusSteven" class="primary" type="button">Steven</button>
+      <button id="resetView" type="button">Reset view</button>
+    </div>
+  </header>
+  <main>
+    <div class="stage-wrap">
+      <canvas id="treeCanvas"></canvas>
+      <div class="hint">Drag to pan · scroll to zoom · click a name for the biography · dashed lines are inferred</div>
+    </div>
+    <aside>
+      <div id="panel" class="panel"></div>
+    </aside>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
