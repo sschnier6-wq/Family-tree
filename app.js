@@ -2,7 +2,7 @@
    Sources: family Hofbuch, 1997 descendant chart, obituaries, passenger list,
    house plaque and cemetery photos from Dingstede, 2011 visit.
 */
-const APP_VERSION = "1.7.0";
+const APP_VERSION = "1.8.0";
 
 const PEOPLE = {
   hof: {
@@ -357,7 +357,7 @@ const PEOPLE = {
     id: "steven",
     name: "Steven Dale Schnier",
     dates: "b. 17 June 1972",
-    role: "Focus person · TI systems / power engineer",
+    role: "Focus person · TI analog / power · business development",
     generation: 2,
     bio: "Steven Dale Schnier was born 17 June 1972, son of Dale Schnier and Sandra Oehlerts. The 1997 family chart already lists him as Steven *3 (& Lori). Public records place him in Ames (Iowa State) and Sergeant Bluff, Iowa, before North Texas. He spent a career at Texas Instruments in Richardson / Dallas in business development, product definition, applications support and analog/power electronics — medical imaging, wireless infrastructure, thermal design and low-noise signal chains. He holds an MBA from the University of Dallas. He retired from TI in 2026.",
     facts: [
@@ -366,10 +366,13 @@ const PEOPLE = {
       "Sister: Tiffany.",
       "Four children with Lori: Jacob, then triplets Julia, Christian, and Annalise — all Plano East High School graduates.",
       "Jacob, Julia, and Christian attended Texas Tech University. Annalise is studying electrical engineering at the University of Arkansas.",
-      "Great-grandson of Gerhard Hinrich Schnier of Dingstede and Adeline von Seggern."
+      "Great-grandson of Gerhard Hinrich Schnier of Dingstede and Adeline von Seggern.",
+      "LinkedIn (Richardson): business development, product definition, applications support and pricing at Texas Instruments.",
+      "Guest lecture for University of Texas at Dallas Master of Science in Systems Engineering and Management students."
     ],
     sources: [
       "1997 descendant chart.",
+      "LinkedIn: Steven Schnier, Texas Instruments, Richardson.",
       "Texas Instruments feature on low-noise signal chains, 5 July 2023.",
       "Altium Academy interview on PCB thermal design."
     ]
@@ -380,20 +383,24 @@ const PEOPLE = {
     dates: "living · McKinney / DFW",
     role: "Electrical engineer · realtor / escrow",
     generation: 2,
-    bio: "Lori is named as Steven’s wife on the 1997 chart. She earned a B.S. in Electrical Engineering at Iowa State University and an MBA at the University of Dallas — the same graduate school as Steven — and later worked in semiconductor marketing before moving into North Texas real estate and title work.",
+    bio: "Lori is named as Steven’s wife on the 1997 chart. She earned a B.S. in Electrical Engineering at Iowa State University and an MBA at the University of Dallas — the same graduate school as Steven — and later worked in semiconductor marketing before moving into North Texas real estate and title work. In 2022 she publicly announced a role as Sales Executive for Allegiance Title in McKinney.",
     facts: [
       "B.S.E.E., Iowa State University.",
       "MBA, University of Dallas.",
-      "Escrow officer / realtor, McKinney area.",
+      "Realtor and title / escrow work, McKinney.",
+      "Sales Executive, Allegiance Title — McKinney (announced 2022 on LinkedIn).",
       "Four children: Jacob, and triplets Julia, Christian, and Annalise."
     ],
-    sources: ["1997 chart; professional listings."]
+    sources: [
+      "1997 chart.",
+      "LinkedIn post by Lori Schnier, November 2022 (Allegiance Title, McKinney)."
+    ]
   },
   tiffany: {
     id: "tiffany",
     name: "Tiffany Schnier Lockman",
-    dates: "living",
-    role: "Sister of Steven",
+    dates: "living · Omaha metro",
+    role: "Sister of Steven · foodservice sales",
     generation: 2,
     bio: "Tiffany Schnier Lockman is Dale and Sandra’s daughter and Steven’s sister. She graduated from Sergeant Bluff-Luton High School in Sergeant Bluff, Iowa, with the class of 1989. Alumni listings give her occupation as market development manager at PepsiCo; later public professional listings place her in Midwest foodservice sales and account management (Hormel, Unilever, H.J. Heinz, PepsiCo Foodservice, TEAM Software). Her daughter is Morgan Lockman.",
     facts: [
