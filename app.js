@@ -2,7 +2,7 @@
    Sources: family Hofbuch, 1997 descendant chart, obituaries, passenger list,
    house plaque and cemetery photos from Dingstede, 2011 visit.
 */
-const APP_VERSION = "1.6.0";
+const APP_VERSION = "1.7.0";
 
 const PEOPLE = {
   hof: {
@@ -94,6 +94,7 @@ const PEOPLE = {
     photos: ["family-portrait.jpg"],
     bio: "Born 21 October 1884 at Dingstede, Oldenburg. At 22 he sailed from Bremen on the Kaiser Wilhelm der Grosse and landed at New York on 26 June 1907. The passenger list gives birthplace as “pingstede” (Dingstede). He married Adeline Henriette von Seggern on 29 August 1912. They farmed in Thurston County until 1919, then on a farm northwest of Bancroft, Cuming County. He belonged to St. Mark’s Lutheran Church in Pender and served on the council. He died 28 April 1978 at Valley View Nursing Home in Pender, age 93, and is buried at St. Mark’s Cemetery. Pallbearers included his grandson Dale Schnier.",
     facts: [
+      "Baptized 30 November 1884 at Kirchhatten (Lutheran), Oldenburg emigrant register.",
       "Ship: Kaiser Wilhelm der Grosse, Bremen → New York, 26 June 1907. NARA T715 roll 930, page 106, line 18.",
       "Thurston County 1912–1919; Bancroft-area farm thereafter.",
       "Six children who lived to adulthood: Gerald, Agnes, Melba, Lester, Kenneth, Wilma.",
@@ -169,7 +170,7 @@ const PEOPLE = {
   gerald: {
     id: "gerald",
     name: "Gerald Schnier",
-    dates: "living 1998 · Norfolk, Nebraska",
+    dates: "surviving Feb 1998 · Norfolk, Nebraska",
     role: "Son of G. H. · father of Dale",
     generation: 0,
     bio: "Gerald Schnier, first branch on the 1997 American descendant chart, married Delora Alvina Breitbarth at Pender on 9 May 1935. They lived in the Norfolk, Nebraska area. Delora’s 1998 obituary still lists Gerald as surviving. Their children were Ronald, Dale, Larry (deceased by 1997), and Keith.",
@@ -200,12 +201,13 @@ const PEOPLE = {
     dates: "son of Gerald · pallbearer 1978",
     role: "Father of Steven and Tiffany",
     generation: 1,
-    bio: "Dale Schnier is the second son of Gerald and Delora on the 1997 chart. He married Sandra (the chart marks the marriage as later divorced). Their children are Tiffany and Steven (who married Lori). Dale was a pallbearer at his grandfather G. H. Schnier’s funeral in Pender on 1 May 1978. Public address history later places the next generation in Ames and Sergeant Bluff, Iowa, then North Texas.",
+    bio: "Dale Schnier is the second son of Gerald and Delora on the 1997 chart. He married Sandra Oehlerts (the chart marks the marriage as later divorced). Their children are Tiffany and Steven. Dale was a pallbearer at his grandfather G. H. Schnier’s funeral in Pender on 1 May 1978. The next generation’s public records run Ames and Sergeant Bluff, Iowa, then North Texas. Family accounts also note Air National Guard service and later years in Nocona, Texas.",
     facts: [
       "Pallbearer, G. H. Schnier funeral, 1 May 1978, with Lanny Schnier, Leland Schnier, Dennis Johnson, Clayton Cooper and Mert Nixon.",
-      "1997 chart: Dale *2 (# Sandra) — Tiffany *3, Steven *3 (& Lori)."
+      "1997 chart: Dale *2 (# Sandra) — Tiffany *3, Steven *3 (& Lori).",
+      "Later associated with Nocona, Texas."
     ],
-    sources: ["1997 descendant chart; G. H. funeral folder."]
+    sources: ["1997 descendant chart; G. H. funeral folder; family."]
   },
   sandra: {
     id: "sandra",
@@ -357,7 +359,7 @@ const PEOPLE = {
     dates: "b. 17 June 1972",
     role: "Focus person · TI systems / power engineer",
     generation: 2,
-    bio: "Steven Dale Schnier was born 17 June 1972, son of Dale Schnier and Sandra. The 1997 family chart already lists him as Steven *3 (& Lori). He grew up in the Iowa–Nebraska corridor (Ames and Sergeant Bluff addresses appear in later public records) and built a career in North Texas as a systems engineer and business-development specialist at Texas Instruments, working on power management, thermal design, and low-noise analog circuits for medical imaging and wireless infrastructure. He holds an MBA from the University of Dallas.",
+    bio: "Steven Dale Schnier was born 17 June 1972, son of Dale Schnier and Sandra Oehlerts. The 1997 family chart already lists him as Steven *3 (& Lori). Public records place him in Ames (Iowa State) and Sergeant Bluff, Iowa, before North Texas. He spent a career at Texas Instruments in Richardson / Dallas in business development, product definition, applications support and analog/power electronics — medical imaging, wireless infrastructure, thermal design and low-noise signal chains. He holds an MBA from the University of Dallas. He retired from TI in 2026.",
     facts: [
       "Born 17 June 1972.",
       "Married Lori, an Iowa State electrical engineer who also took an MBA at the University of Dallas.",
@@ -393,9 +395,17 @@ const PEOPLE = {
     dates: "living",
     role: "Sister of Steven",
     generation: 2,
-    bio: "Tiffany is listed on the 1997 chart as Dale and Sandra’s daughter, sister of Steven. Later public indexes use Tiffany Lockman / Tiffany L. Schnier. Her daughter is Morgan Lockman.",
-    facts: ["1997 chart: Tiffany *3 under Dale.", "Daughter: Morgan Lockman."],
-    sources: ["1997 descendant chart; family."]
+    bio: "Tiffany Schnier Lockman is Dale and Sandra’s daughter and Steven’s sister. She graduated from Sergeant Bluff-Luton High School in Sergeant Bluff, Iowa, with the class of 1989. Alumni listings give her occupation as market development manager at PepsiCo; later public professional listings place her in Midwest foodservice sales and account management (Hormel, Unilever, H.J. Heinz, PepsiCo Foodservice, TEAM Software). Her daughter is Morgan Lockman.",
+    facts: [
+      "Sergeant Bluff-Luton High School, class of 1989.",
+      "Market development / foodservice sales career, including PepsiCo.",
+      "Daughter: Morgan Lockman."
+    ],
+    sources: [
+      "1997 descendant chart.",
+      "Sergeant Bluff-Luton High School alumni listing (Tiffany Lockman, née Schnier, class of 1989).",
+      "Public professional listings."
+    ]
   },
   morgan: {
     id: "morgan",
@@ -486,11 +496,11 @@ const PEOPLE = {
     dates: "triplet · daughter of Steven and Lori",
     role: "Plano East · Texas Tech",
     generation: 3,
-    bio: "Julia Schnier is one of the triplets born to Steven Dale Schnier and Lori Ann Schnier — with Christian and Annalise. She grew up in the Plano / North Texas area and graduated from Plano East Senior High School. After high school she attended Texas Tech University in Lubbock.",
+    bio: "Julia Schnier is one of the triplets born to Steven Dale Schnier and Lori Ann Schnier — with Christian and Annalise. She grew up in the Plano / North Texas area and graduated from Plano East Senior High School. She earned a B.S. in Nursing at Texas Tech University, passed the NCLEX, and is a licensed registered nurse.",
     facts: [
       "Triplet with Christian and Annalise.",
       "Graduate, Plano East Senior High School, Plano, Texas.",
-      "Texas Tech University (TTU), Lubbock."
+      "B.S. Nursing, Texas Tech University; NCLEX / licensed RN."
     ],
     sources: ["Family."]
   },
