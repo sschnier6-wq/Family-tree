@@ -2,7 +2,7 @@
    Sources: family Hofbuch, 1997 descendant chart, obituaries, passenger list,
    house plaque and cemetery photos from Dingstede, 2011 visit.
 */
-const APP_VERSION = "1.5.1";
+const APP_VERSION = "1.6.0";
 
 const PEOPLE = {
   hof: {
@@ -327,7 +327,7 @@ const PEOPLE = {
     dates: "living 1997",
     role: "Brother of Dale",
     generation: 1,
-    bio: "Eldest son of Gerald and Delora. Married Suzi. Children Randall (married Connie; children Jeffrey and Becky) and Russell (married Lisa; son Alex).",
+    bio: "Eldest son of Gerald and Delora. Married Suzi. Children Randy (Randall; married Connie; children Jeffrey and Becky) and Rusty (Russell; married Lisa; son Alex).",
     facts: ["1997 chart generation 2 under Gerald."],
     sources: ["1997 descendant chart."]
   },
@@ -393,9 +393,79 @@ const PEOPLE = {
     dates: "living",
     role: "Sister of Steven",
     generation: 2,
-    bio: "Tiffany is listed on the 1997 chart as Dale and Sandra’s daughter, sister of Steven. Later public indexes use Tiffany Lockman / Tiffany L. Schnier.",
-    facts: ["1997 chart: Tiffany *3 under Dale."],
-    sources: ["1997 descendant chart."]
+    bio: "Tiffany is listed on the 1997 chart as Dale and Sandra’s daughter, sister of Steven. Later public indexes use Tiffany Lockman / Tiffany L. Schnier. Her daughter is Morgan Lockman.",
+    facts: ["1997 chart: Tiffany *3 under Dale.", "Daughter: Morgan Lockman."],
+    sources: ["1997 descendant chart; family."]
+  },
+  morgan: {
+    id: "morgan",
+    name: "Morgan Lockman",
+    dates: "daughter of Tiffany",
+    role: "Daughter of Tiffany Schnier Lockman",
+    generation: 3,
+    bio: "Morgan Lockman is the daughter of Tiffany Schnier Lockman, niece of Steven Dale Schnier.",
+    facts: ["Daughter of Tiffany Schnier Lockman."],
+    sources: ["Family."]
+  },
+  randy: {
+    id: "randy",
+    name: "Randy Schnier",
+    dates: "son of Ronald",
+    role: "Son of Ronald Schnier",
+    generation: 2,
+    bio: "Randy (Randall) Schnier is a son of Ronald Schnier and Suzi. The 1997 chart lists him as Randall, married to Connie, with children Jeffrey and Becky.",
+    facts: ["Also listed as Randall on the 1997 chart.", "Brother of Rusty."],
+    sources: ["1997 descendant chart; family."]
+  },
+  rusty: {
+    id: "rusty",
+    name: "Rusty Schnier",
+    dates: "son of Ronald",
+    role: "Son of Ronald Schnier",
+    generation: 2,
+    bio: "Rusty (Russell) Schnier is a son of Ronald Schnier and Suzi. The 1997 chart lists him as Russell, married to Lisa, with son Alex.",
+    facts: ["Also listed as Russell on the 1997 chart.", "Brother of Randy."],
+    sources: ["1997 descendant chart; family."]
+  },
+  jonnie: {
+    id: "jonnie",
+    name: "Jonnie Schnier Albin",
+    dates: "daughter of Larry",
+    role: "Daughter of Larry Schnier",
+    generation: 2,
+    bio: "Jonnie is a daughter of Larry Schnier and Tanice. The 1997 chart lists her as married to Jim Albin, with children Addison and Jaxson.",
+    facts: ["Sister of Jasey.", "Married Jim Albin (1997 chart)."],
+    sources: ["1997 descendant chart; family."]
+  },
+  jasey: {
+    id: "jasey",
+    name: "Jasey Schnier",
+    dates: "child of Larry",
+    role: "Child of Larry Schnier",
+    generation: 2,
+    bio: "Jasey is a child of Larry Schnier and Tanice, sibling of Jonnie.",
+    facts: ["Sibling of Jonnie."],
+    sources: ["1997 descendant chart; family."]
+  },
+  brian: {
+    id: "brian",
+    name: "Brian Schnier",
+    dates: "son of Keith",
+    role: "Son of Keith Schnier",
+    generation: 2,
+    bio: "Brian Schnier is a son of Keith Schnier and Camille. The 1997 chart notes a later divorce from Gillian and a son, Christian.",
+    facts: ["Brother of Allison."],
+    sources: ["1997 descendant chart; family."]
+  },
+  allison: {
+    id: "allison",
+    name: "Allison Schnier",
+    dates: "daughter of Keith",
+    role: "Daughter of Keith Schnier",
+    generation: 2,
+    bio: "Allison Schnier is a daughter of Keith Schnier and Camille, sister of Brian.",
+    facts: ["Sister of Brian."],
+    sources: ["1997 descendant chart; family."]
   },
   jacob: {
     id: "jacob",
@@ -551,7 +621,14 @@ const LINKS = [
   { from: "steven", to: "christian", type: "parent" },
   { from: "lori", to: "christian", type: "parent" },
   { from: "steven", to: "annalise", type: "parent" },
-  { from: "lori", to: "annalise", type: "parent" }
+  { from: "lori", to: "annalise", type: "parent" },
+  { from: "tiffany", to: "morgan", type: "parent" },
+  { from: "ronald", to: "randy", type: "parent" },
+  { from: "ronald", to: "rusty", type: "parent" },
+  { from: "larry", to: "jonnie", type: "parent" },
+  { from: "larry", to: "jasey", type: "parent" },
+  { from: "keith", to: "brian", type: "parent" },
+  { from: "keith", to: "allison", type: "parent" }
 ];
 
 const GENERATION_LABELS = {
@@ -562,7 +639,7 @@ const GENERATION_LABELS = {
   "0": "Nebraska children of G. H.",
   "1": "Gerald’s sons",
   "2": "Steven’s generation",
-  "3": "Jacob and the triplets"
+  "3": "Morgan, Jacob, and the triplets"
 };
 
 const canvas = document.getElementById("treeCanvas");
@@ -593,8 +670,8 @@ function layout() {
     heinrich1878: 0, gerhard1884: 1, adeline: 2, diphtheria: 3, annasophie1889: 4, johann1893: 5, herman_oehlerts: 6, mary_spiecker: 7,
     gerald: 0, delora: 1, agnes: 2, melba: 3, lester: 4, kenny: 5, wilma: 6, sylvester_oehlerts: 7, eleanor_oehlerts: 8,
     ronald: 0, dale: 1, sandra: 2, larry: 3, keith: 4, john_oehlerts: 5, monfore_sister: 6,
-    tiffany: 0, steven: 1, lori: 2,
-    jacob: 0, julia: 1, christian: 2, annalise: 3
+    randy: 0, rusty: 1, tiffany: 2, steven: 3, lori: 4, jonnie: 5, jasey: 6, brian: 7, allison: 8,
+    morgan: 0, jacob: 1, julia: 2, christian: 3, annalise: 4
   };
   Object.keys(cols).forEach((g) => {
     cols[g].sort((a, b) => (order[a.id] ?? 50) - (order[b.id] ?? 50));
