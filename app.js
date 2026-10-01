@@ -2,7 +2,7 @@
    Sources: family Hofbuch, 1997 descendant chart, obituaries, passenger list,
    house plaque and cemetery photos from Dingstede, 2011 visit.
 */
-const APP_VERSION = "1.9.5";
+const APP_VERSION = "1.9.6";
 
 const PEOPLE = {
   hof: {
@@ -503,7 +503,7 @@ const PEOPLE = {
     ],
     sources: [
       "Family.",
-      "Public LinkedIn profile: linkedin.com/in/jacob-schnier-47a15628b (login wall; not readable from here)."
+      "LinkedIn: https://www.linkedin.com/in/jacob-schnier-47a15628b"
     ]
   },
   julia: {
@@ -520,7 +520,7 @@ const PEOPLE = {
     ],
     sources: [
       "Family.",
-      "Public LinkedIn profile: linkedin.com/in/julia-schnier-68092b28a (login wall; not readable from here)."
+      "LinkedIn: https://www.linkedin.com/in/julia-schnier-68092b28a"
     ]
   },
   christian: {
@@ -537,7 +537,7 @@ const PEOPLE = {
     ],
     sources: [
       "Family.",
-      "Public LinkedIn profile: linkedin.com/in/christian-schnier-881503328 (login wall; not readable from here)."
+      "LinkedIn: https://www.linkedin.com/in/christian-schnier-881503328"
     ]
   },
   annalise: {
@@ -554,7 +554,7 @@ const PEOPLE = {
     ],
     sources: [
       "Family.",
-      "Public LinkedIn profile: linkedin.com/in/annaliseschnier (login wall; not readable from here)."
+      "LinkedIn: https://www.linkedin.com/in/annaliseschnier"
     ]
   },
   agnes: {
@@ -858,17 +858,17 @@ function roundRect(c, x, y, w, h, r) {
 function renderPanel(id) {
   const p = PEOPLE[id];
   if (!p) return;
-  const facts = (p.facts || []).map((f) => `<li>${esc(f)}</li>`).join("");
-  const src = (p.sources || []).map((s) => `<li>${esc(s)}</li>`).join("");
+  const facts = (p.facts || []).map((f) => `<li>${linkify(f)}</li>`).join("");
+  const src = (p.sources || []).map((s) => `<li>${linkify(s)}</li>`).join("");
   const pics = (p.photos || [])
-    .map((src) => `<img src="${esc(src)}" alt="${esc(p.name)}" />`)
+    .map((srcName) => `<img src="${esc(srcName)}" alt="${esc(p.name)}" />`)
     .join("");
   panel.innerHTML = `
     <p class="kicker">${esc(GENERATION_LABELS[String(p.generation)] || "")}</p>
     <h2 id="personName">${esc(p.name)}</h2>
     <p class="dates">${esc(p.dates)}</p>
     <div class="role">${esc(p.role)}</div>
-    <p class="bio">${esc(p.bio)}</p>
+    <p class="bio">${linkify(p.bio)}</p>
     ${pics ? `<div class="thumbs">${pics}</div>` : ""}
     <ul class="facts">${facts}</ul>
     <div class="sources"><strong>Sources</strong><ul>${src}</ul></div>
@@ -880,6 +880,26 @@ function renderPanel(id) {
 function esc(s) {
   return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
+
+function linkify(text) {
+  const raw = String(text || "");
+  const re = /\b((?:https?:\/\/|www\.)[^\s<>"']+|(?:linkedin|facebook|ancestry|findagrave|en\.wikipedia)\.com\/[^\s<>"']+)/gi;
+  let out = "";
+  let last = 0;
+  let match;
+  while ((match = re.exec(raw))) {
+    out += esc(raw.slice(last, match.index));
+    let href = match[1].replace(/[),.;]+$/, "");
+    const shown = href;
+    if (!/^https?:\/\//i.test(href)) href = "https://" + href;
+    out += `<a href="${esc(href)}" target="_blank" rel="noopener noreferrer">${esc(shown)}</a>`;
+    last = match.index + shown.length;
+    re.lastIndex = last;
+  }
+  out += esc(raw.slice(last));
+  return out;
+}
+
 
 function openModal() {
   modal.classList.add("is-open");

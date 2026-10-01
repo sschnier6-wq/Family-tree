@@ -219,6 +219,13 @@ main {
   font-size: 0.75rem;
 }
 .sources { margin-top: 18px; font-size: 0.82rem; color: var(--ink-soft); }
+.panel a {
+  color: #2f6f5e;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  overflow-wrap: anywhere;
+}
+.panel a:active { color: #6b3e2e; }
 .thumbs {
   display: grid;
   grid-template-columns: 1fr 1fr;
