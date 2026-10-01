@@ -2,7 +2,7 @@
    Sources: family Hofbuch, 1997 descendant chart, obituaries, passenger list,
    house plaque and cemetery photos from Dingstede, 2011 visit.
 */
-const APP_VERSION = "1.9.2";
+const APP_VERSION = "1.9.3";
 
 const PEOPLE = {
   hof: {
@@ -505,6 +505,8 @@ const PEOPLE = {
       "Family.",
       "Public LinkedIn profile: linkedin.com/in/jacob-schnier-47a15628b (login wall; not readable from here)."
     ]
+  },
+  julia: {
     id: "julia",
     name: "Julia Schnier",
     dates: "triplet · daughter of Steven and Lori",
@@ -520,6 +522,8 @@ const PEOPLE = {
       "Family.",
       "Public LinkedIn profile: linkedin.com/in/julia-schnier-68092b28a (login wall; not readable from here)."
     ]
+  },
+  christian: {
     id: "christian",
     name: "Christian Schnier",
     dates: "triplet · son of Steven and Lori",
@@ -535,6 +539,8 @@ const PEOPLE = {
       "Family.",
       "Public LinkedIn profile: linkedin.com/in/christian-schnier-881503328 (login wall; not readable from here)."
     ]
+  },
+  annalise: {
     id: "annalise",
     name: "Annalise Schnier",
     dates: "triplet · daughter of Steven and Lori",
@@ -550,6 +556,8 @@ const PEOPLE = {
       "Family.",
       "Public LinkedIn profile: linkedin.com/in/annaliseschnier (login wall; not readable from here)."
     ]
+  },
+  agnes: {
     id: "agnes",
     name: "Agnes Schnier Johnson",
     dates: "of Pender · living 1978",
