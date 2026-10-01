@@ -2,7 +2,7 @@
    Sources: family Hofbuch, 1997 descendant chart, obituaries, passenger list,
    house plaque and cemetery photos from Dingstede, 2011 visit.
 */
-const APP_VERSION = "1.8.0";
+const APP_VERSION = "1.9.2";
 
 const PEOPLE = {
   hof: {
@@ -173,14 +173,17 @@ const PEOPLE = {
     dates: "surviving Feb 1998 · Norfolk, Nebraska",
     role: "Son of G. H. · father of Dale",
     generation: 0,
-    bio: "Gerald Schnier, first branch on the 1997 American descendant chart, married Delora Alvina Breitbarth at Pender on 9 May 1935. They lived in the Norfolk, Nebraska area. Delora’s 1998 obituary still lists Gerald as surviving. Their children were Ronald, Dale, Larry (deceased by 1997), and Keith.",
+    bio: "Gerald Schnier, first branch on the 1997 American descendant chart, married Delora Alvina Breitbarth at Pender on 9 May 1935. They farmed in Thurston County, Nebraska, for 23 years and raised their four sons there — Ronald, Dale, Larry, and Keith. After retiring they lived three years in Golden, Colorado, then moved to Norfolk, Nebraska, and stayed there the rest of their lives. Delora’s February 1998 Norfolk Daily News obituary still lists Gerald as surviving.",
     facts: [
       "Married 9 May 1935, Pender, Nebraska.",
+      "Farmed 23 years in Thurston County, Nebraska, while raising four sons.",
+      "Three years in Golden, Colorado after retirement, then Norfolk for the rest of their lives.",
       "Four sons: Ronald, Dale, Larry († before 7 July 1997), Keith."
     ],
     sources: [
       "1997 descendant chart: “das Nachkommen von Gerhard Hinrich Schnier.”",
-      "Delora Schnier obituary, Norfolk Daily News, February 1998."
+      "Delora Schnier obituary, Norfolk Daily News, February 1998.",
+      "Dale Schnier, family note on Gerald Schnier family history, 30 September 2026."
     ]
   },
   delora: {
@@ -189,39 +192,51 @@ const PEOPLE = {
     dates: "13 Aug 1916 – 25 Feb 1998",
     role: "of Bancroft · Gerald’s wife",
     generation: 0,
-    bio: "Delora Alvina Breitbarth was born 13 August 1916 at Bancroft, Cuming County, Nebraska, to Fred and Helene (Yost) Breitbarth. She married Gerald Schnier at Pender on 9 May 1935. She died 25 February 1998 at Norfolk and is buried at Hillcrest Cemetery, Norfolk. She was survived by her husband, three sons, eight grandchildren and six great-grandchildren, and was preceded by one son (Larry).",
+    bio: "Delora Alvina Breitbarth was born 13 August 1916 at Bancroft, Cuming County, Nebraska, to Fred and Helene (Yost) Breitbarth. She married Gerald Schnier at Pender on 9 May 1935. They farmed in Thurston County for 23 years while raising Ronald, Dale, Larry, and Keith, lived three years in Golden, Colorado after retirement, then settled in Norfolk, Nebraska. She died 25 February 1998 at Norfolk and is buried at Hillcrest Cemetery, Norfolk. She was survived by her husband, three sons, eight grandchildren and six great-grandchildren, and was preceded by one son (Larry).",
     facts: [
-      "Brothers Glen (Norwalk, California) and Vernon (Sun City, Arizona); sister Joan Fleming (Eagan, Minnesota)."
+      "Brothers Glen (Norwalk, California) and Vernon (Sun City, Arizona); sister Joan Fleming (Eagan, Minnesota).",
+      "Thurston County farm 23 years; Golden, Colorado 3 years; Norfolk thereafter."
     ],
-    sources: ["Find a Grave 178783791; Norfolk Daily News obituary extracts."]
+    sources: [
+      "Find a Grave 178783791; Norfolk Daily News obituary extracts.",
+      "Dale Schnier, family note on Gerald Schnier family history, 30 September 2026."
+    ]
   },
   dale: {
     id: "dale",
-    name: "Dale Schnier",
+    name: "Dale Frederick Schnier",
     dates: "son of Gerald · pallbearer 1978",
     role: "Father of Steven and Tiffany",
     generation: 1,
-    bio: "Dale Schnier is the second son of Gerald and Delora on the 1997 chart. He married Sandra Oehlerts (the chart marks the marriage as later divorced). Their children are Tiffany and Steven. Dale was a pallbearer at his grandfather G. H. Schnier’s funeral in Pender on 1 May 1978. The next generation’s public records run Ames and Sergeant Bluff, Iowa, then North Texas. Family accounts also note Air National Guard service and later years in Nocona, Texas.",
+    bio: "Dale Frederick Schnier is the second son of Gerald and Delora on the 1997 chart. He married Sandra Oehlerts (the chart marks the marriage as later divorced). Their children are Tiffany and Steven. Dale was a pallbearer at his grandfather G. H. Schnier’s funeral in Pender on 1 May 1978. Public place indexes associate him with Sergeant Bluff, Iowa, and later Nocona, Texas. Family accounts also note Air National Guard service.",
     facts: [
       "Pallbearer, G. H. Schnier funeral, 1 May 1978, with Lanny Schnier, Leland Schnier, Dennis Johnson, Clayton Cooper and Mert Nixon.",
       "1997 chart: Dale *2 (# Sandra) — Tiffany *3, Steven *3 (& Lori).",
-      "Later associated with Nocona, Texas."
+      "Public indexes: Sergeant Bluff, Iowa; Nocona, Texas."
     ],
-    sources: ["1997 descendant chart; G. H. funeral folder; family."]
+    sources: [
+      "1997 descendant chart; G. H. funeral folder; family.",
+      "Public people indexes listing Dale F. / Dale Frederick Schnier with Tiffany Lockman and Steven Schnier."
+    ]
   },
   sandra: {
     id: "sandra",
     name: "Sandra “Sandy” Oehlerts Schnier",
     dates: "daughter of Sylvester and Eleanor",
-    role: "Steven’s mother · maiden name Oehlerts",
+    role: "Steven’s mother · also Mrs. William Monfore",
     generation: 1,
-    bio: "Sandra (Sandy) Oehlerts is the daughter of Sylvester Hans Henry Oehlerts (1911–1987) and Eleanor Marie Moritz Oehlerts (1914–1996) of Remsen, Plymouth County, Iowa. The 1997 Schnier descendant chart lists her as Sandra, Dale Schnier’s first wife, with the chart’s mark for a later divorce. Public indexes later also use Sandra Fauth. She is the mother of Tiffany and Steven Dale Schnier.",
+    bio: "Sandra (Sandy) Oehlerts is the daughter of Sylvester Hans Henry Oehlerts (1911–1987) and Eleanor Marie Moritz Oehlerts (1914–1996) of Remsen, Plymouth County, Iowa, and the sister of John Herman Oehlerts. The June 1966 Remsen obituaries for John name her as Mrs. William Monfore of Greeley, Colorado — the same person as Sandy Schnier, later listed on the 1997 Schnier descendant chart as Dale Schnier’s wife (the chart marks a later divorce). She is the mother of Tiffany and Steven Dale Schnier. Public indexes later also use Sandra Fauth.",
     facts: [
       "Grew up in the Remsen / Plymouth County Oehlerts family.",
+      "Named in June 1966 papers as Mrs. William Monfore of Greeley, Colorado — not a separate sister.",
       "Brother John Herman Oehlerts (1947–1966) was killed in a two-car crash on Highway 3 east of Marcus.",
-      "A sister was already Mrs. William Monfore of Greeley, Colorado, by June 1966."
+      "Mother of Tiffany Schnier Lockman and Steven Dale Schnier."
     ],
-    sources: ["Family identification; 1997 descendant chart; Remsen crash clippings, June 1966."]
+    sources: [
+      "Family identification (Dale / Steven Schnier).",
+      "1997 descendant chart.",
+      "Remsen crash clippings, June 1966."
+    ]
   },
   herman_oehlerts: {
     id: "herman_oehlerts",
@@ -269,6 +284,7 @@ const PEOPLE = {
     facts: [
       "Birth: 1911, Plymouth County.",
       "Marriage: Cherokee County, Iowa.",
+      "Children: Sandra (Sandy) Oehlerts Schnier — listed in 1966 as Mrs. William Monfore of Greeley — and John Herman Oehlerts.",
       "Rural route 3, Remsen, at the time of his son John’s funeral.",
       "Stone: SYLVESTER 1911–1987."
     ],
@@ -285,7 +301,7 @@ const PEOPLE = {
     role: "of Remsen · Sandra’s mother",
     generation: 0,
     photos: ["sylvester-eleanor-stone.jpg", "sylvester-eleanor-stone-2.jpg"],
-    bio: "Eleanor Marie Moritz was born 1914. She married Sylvester Hans Henry Oehlerts in Cherokee County. They raised their family at Remsen, including John Herman (1947–1966), a daughter who by 1966 was Mrs. William Monfore of Greeley, Colorado, and Sandra (Sandy), later mother of Steven Dale Schnier. Eleanor died in 1996. The double stone at Remsen reads Eleanor 1914–1996 / Sylvester 1911–1987.",
+    bio: "Eleanor Marie Moritz was born 1914. She married Sylvester Hans Henry Oehlerts in Cherokee County. They raised their family at Remsen: son John Herman (1947–1966) and daughter Sandra (Sandy) Oehlerts, later Mrs. William Monfore of Greeley and later Sandy Schnier, mother of Steven Dale Schnier. Eleanor died in 1996. The double stone at Remsen reads Eleanor 1914–1996 / Sylvester 1911–1987.",
     facts: [
       "Maiden name Moritz, per Ancestry trees in the family papers.",
       "Lived Plymouth County / Remsen.",
@@ -300,7 +316,7 @@ const PEOPLE = {
     role: "Sandra’s brother · killed on Highway 3",
     generation: 1,
     photos: ["john-oehlerts-stone.jpg", "crash-clipping.jpg", "crash-clipping-2.jpg"],
-    bio: "John Herman Oehlerts was born 1 February 1947 at Remsen. He graduated from Remsen High School in May 1965 and was working as a machinist at Cherokee. Late on a Saturday night he was a passenger in a Pontiac driven westbound by Gary Fiedler, 20, of Remsen, when it met a Rambler driven by David E. Preston, 32, of Cleghorn, head-on on Highway 3 about a mile and a half east of the Marcus junction. John and Preston were killed. Four other Remsen-area young men in the two cars were injured. Funeral services were at St. Paul Evangelical Lutheran Church, Remsen, Rev. Paul Wuebben officiating; burial in Remsen City Cemetery under direction of Moeller Funeral Home. Survivors named in the paper: parents Mr. and Mrs. Sylvester H. Oehlerts of Remsen, and a sister, Mrs. William Monfore of Greeley, Colorado.",
+    bio: "John Herman Oehlerts was born 1 February 1947 at Remsen. He graduated from Remsen High School in May 1965 and was working as a machinist at Cherokee. Late on a Saturday night he was a passenger in a Pontiac driven westbound by Gary Fiedler, 20, of Remsen, when it met a Rambler driven by David E. Preston, 32, of Cleghorn, head-on on Highway 3 about a mile and a half east of the Marcus junction. John and Preston were killed. Four other Remsen-area young men in the two cars were injured. Funeral services were at St. Paul Evangelical Lutheran Church, Remsen, Rev. Paul Wuebben officiating; burial in Remsen City Cemetery under direction of Moeller Funeral Home. Survivors named in the paper: parents Mr. and Mrs. Sylvester H. Oehlerts of Remsen, and a sister, Mrs. William Monfore of Greeley, Colorado — that sister is Sandra (Sandy) Oehlerts, later Sandy Schnier.",
     facts: [
       "Born 1 February 1947, Remsen.",
       "May 1965 graduate, Remsen High School.",
@@ -312,16 +328,6 @@ const PEOPLE = {
       "Remsen / northwest Iowa newspaper clippings saved as “Sylvester Oehlerts, Rt. 3, Remsen, Iowa, 6-15-66.”",
       "Family gravestone photograph, Remsen Community Cemetery."
     ]
-  },
-  monfore_sister: {
-    id: "monfore_sister",
-    name: "Mrs. William Monfore",
-    dates: "living 1966 · Greeley, Colorado",
-    role: "Sandra’s sister",
-    generation: 1,
-    bio: "The June 1966 obituaries for John Herman Oehlerts name one sister besides the parents: Mrs. William Monfore of Greeley, Colorado. First name is not given in the clippings. Greeley was then a major cattle-feeding town; the Monfore / Monfort name is well known there, but the clipping does not identify which William Monfore she married.",
-    facts: ["Named as surviving sister of John Oehlerts, June 1966."],
-    sources: ["Remsen crash obituaries, June 1966."]
   },
   ronald: {
     id: "ronald",
@@ -495,9 +501,10 @@ const PEOPLE = {
       "Graduate, Plano East Senior High School, Plano, Texas.",
       "Texas Tech University (TTU), Lubbock."
     ],
-    sources: ["Family."]
-  },
-  julia: {
+    sources: [
+      "Family.",
+      "Public LinkedIn profile: linkedin.com/in/jacob-schnier-47a15628b (login wall; not readable from here)."
+    ]
     id: "julia",
     name: "Julia Schnier",
     dates: "triplet · daughter of Steven and Lori",
@@ -509,9 +516,10 @@ const PEOPLE = {
       "Graduate, Plano East Senior High School, Plano, Texas.",
       "B.S. Nursing, Texas Tech University; NCLEX / licensed RN."
     ],
-    sources: ["Family."]
-  },
-  christian: {
+    sources: [
+      "Family.",
+      "Public LinkedIn profile: linkedin.com/in/julia-schnier-68092b28a (login wall; not readable from here)."
+    ]
     id: "christian",
     name: "Christian Schnier",
     dates: "triplet · son of Steven and Lori",
@@ -523,9 +531,10 @@ const PEOPLE = {
       "Graduate, Plano East Senior High School, Plano, Texas.",
       "Texas Tech University (TTU), Lubbock."
     ],
-    sources: ["Family."]
-  },
-  annalise: {
+    sources: [
+      "Family.",
+      "Public LinkedIn profile: linkedin.com/in/christian-schnier-881503328 (login wall; not readable from here)."
+    ]
     id: "annalise",
     name: "Annalise Schnier",
     dates: "triplet · daughter of Steven and Lori",
@@ -537,9 +546,10 @@ const PEOPLE = {
       "Graduate, Plano East Senior High School, Plano, Texas.",
       "Electrical Engineering, University of Arkansas, Fayetteville."
     ],
-    sources: ["Family."]
-  },
-  agnes: {
+    sources: [
+      "Family.",
+      "Public LinkedIn profile: linkedin.com/in/annaliseschnier (login wall; not readable from here)."
+    ]
     id: "agnes",
     name: "Agnes Schnier Johnson",
     dates: "of Pender · living 1978",
@@ -575,9 +585,19 @@ const PEOPLE = {
     dates: "of Pender · † before 1997",
     role: "Son of G. H.",
     generation: 0,
-    bio: "Kenneth (“Kenny”) of Pender survived his father in 1978 and is marked deceased on the 1997 chart. He married Delilah Fenke. Sons Richard, Leland and Clinton. Leland Schnier was a pallbearer in 1978.",
-    facts: ["Pender — St. Mark’s Lutheran, the family church."],
+    bio: "Kenneth (“Kenny”) of Pender survived his father in 1978 and is marked deceased on the 1997 chart. He married Delilah Fenke. Children Richard, Leland, Clinton, and LeAnn. Leland Schnier was a pallbearer in 1978.",
+    facts: ["Pender — St. Mark’s Lutheran, the family church.", "Daughter LeAnn."],
     sources: ["G. H. obituary; 1997 chart."]
+  },
+  leann: {
+    id: "leann",
+    name: "LeAnn Schnier",
+    dates: "daughter of Kenneth",
+    role: "Daughter of Kenneth Schnier",
+    generation: 1,
+    bio: "LeAnn is a daughter of Kenneth (“Kenny”) Schnier of Pender and Delilah Fenke. She is a first cousin of Dale, Ronald, Larry, and Keith.",
+    facts: ["Placed under Kenneth on the family tree by family identification."],
+    sources: ["Family identification."]
   },
   wilma: {
     id: "wilma",
@@ -623,8 +643,6 @@ const LINKS = [
   { from: "eleanor_oehlerts", to: "sandra", type: "parent" },
   { from: "sylvester_oehlerts", to: "john_oehlerts", type: "parent" },
   { from: "eleanor_oehlerts", to: "john_oehlerts", type: "parent" },
-  { from: "sylvester_oehlerts", to: "monfore_sister", type: "parent" },
-  { from: "eleanor_oehlerts", to: "monfore_sister", type: "parent" },
   { from: "dale", to: "sandra", type: "spouse", dashed: true },
   { from: "dale", to: "steven", type: "parent" },
   { from: "sandra", to: "steven", type: "parent" },
@@ -645,7 +663,8 @@ const LINKS = [
   { from: "larry", to: "jonnie", type: "parent" },
   { from: "larry", to: "jasey", type: "parent" },
   { from: "keith", to: "brian", type: "parent" },
-  { from: "keith", to: "allison", type: "parent" }
+  { from: "keith", to: "allison", type: "parent" },
+  { from: "kenny", to: "leann", type: "parent" }
 ];
 
 const GENERATION_LABELS = {
@@ -686,7 +705,7 @@ function layout() {
     johann1853: 0, anna1855: 1,
     heinrich1878: 0, gerhard1884: 1, adeline: 2, diphtheria: 3, annasophie1889: 4, johann1893: 5, herman_oehlerts: 6, mary_spiecker: 7,
     gerald: 0, delora: 1, agnes: 2, melba: 3, lester: 4, kenny: 5, wilma: 6, sylvester_oehlerts: 7, eleanor_oehlerts: 8,
-    ronald: 0, dale: 1, sandra: 2, larry: 3, keith: 4, john_oehlerts: 5, monfore_sister: 6,
+    ronald: 0, dale: 1, sandra: 2, larry: 3, keith: 4, john_oehlerts: 5, leann: 6,
     randy: 0, rusty: 1, tiffany: 2, steven: 3, lori: 4, jonnie: 5, jasey: 6, brian: 7, allison: 8,
     morgan: 0, jacob: 1, julia: 2, christian: 3, annalise: 4
   };
