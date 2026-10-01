@@ -2,7 +2,7 @@
    Sources: family Hofbuch, 1997 descendant chart, obituaries, passenger list,
    house plaque and cemetery photos from Dingstede, 2011 visit.
 */
-const APP_VERSION = "1.9.3";
+const APP_VERSION = "1.9.5";
 
 const PEOPLE = {
   hof: {
@@ -1023,43 +1023,76 @@ function formatCount(n) {
   return Number(n).toLocaleString("en-US");
 }
 
-function setMeta(visits) {
+function setMeta(visits, uniques) {
   const el = document.getElementById("appMeta");
   if (!el) return;
   const visitText = visits == null ? "visits —" : (visits === 1 ? "1 visit" : `${formatCount(visits)} visits`);
-  el.textContent = `v${APP_VERSION} · ${visitText}`;
+  const uniqueText = uniques == null ? "unique —" : (uniques === 1 ? "1 unique" : `${formatCount(uniques)} unique`);
+  el.textContent = `v${APP_VERSION} · ${visitText} · ${uniqueText}`;
 }
 
-async function trackVisits() {
-  setMeta(null);
-  const key = "schnier-tree-visits";
-  const endpoints = [
-    "https://abacus.jasoncameron.dev/hit/schnier-family-tree/visits",
-    "https://api.counterapi.dev/v2/steveschnier/family-tree/up"
-  ];
-  for (const url of endpoints) {
+async function bumpRemote(urls) {
+  for (const url of urls) {
     try {
       const res = await fetch(url, { cache: "no-store" });
       if (!res.ok) continue;
       const data = await res.json();
-      const n = data.value ?? data.count ?? data.hits ?? data;
-      if (typeof n === "number" && n >= 0) {
-        localStorage.setItem(key, String(n));
-        setMeta(n);
-        return;
-      }
+      const n = Number(data.value ?? data.count ?? data.hits ?? data);
+      if (Number.isFinite(n) && n >= 0) return n;
     } catch (err) {
       /* try next */
     }
   }
-  const local = Number(localStorage.getItem(key) || "0") + 1;
-  localStorage.setItem(key, String(local));
-  setMeta(local);
+  return null;
+}
+
+async function trackVisits() {
+  const totalKey = "schnier-tree-visits";
+  const uniqueKey = "schnier-tree-uniques";
+  const seenKey = "schnier-tree-unique-seen";
+  const localTotal = Number(localStorage.getItem(totalKey) || "0") + 1;
+  localStorage.setItem(totalKey, String(localTotal));
+  const firstHere = localStorage.getItem(seenKey) !== "1";
+  let localUnique = Number(localStorage.getItem(uniqueKey) || "0");
+  if (firstHere) {
+    localUnique += 1;
+    localStorage.setItem(uniqueKey, String(localUnique));
+    localStorage.setItem(seenKey, "1");
+  }
+  setMeta(localTotal, localUnique);
+
+  const remoteTotal = await bumpRemote([
+    "https://abacus.jasoncameron.dev/hit/schnier-family-tree/visits",
+    "https://api.counterapi.dev/v1/schnier-family-tree/visits/up"
+  ]);
+  if (remoteTotal != null) {
+    localStorage.setItem(totalKey, String(Math.max(localTotal, remoteTotal)));
+  }
+
+  let remoteUnique = null;
+  if (firstHere) {
+    remoteUnique = await bumpRemote([
+      "https://abacus.jasoncameron.dev/hit/schnier-family-tree/uniques",
+      "https://api.counterapi.dev/v1/schnier-family-tree/uniques/up"
+    ]);
+  } else {
+    remoteUnique = await bumpRemote([
+      "https://abacus.jasoncameron.dev/get/schnier-family-tree/uniques",
+      "https://api.counterapi.dev/v1/schnier-family-tree/uniques"
+    ]);
+  }
+  if (remoteUnique != null) {
+    localStorage.setItem(uniqueKey, String(Math.max(localUnique, remoteUnique)));
+  }
+
+  setMeta(
+    Number(localStorage.getItem(totalKey) || localTotal),
+    Number(localStorage.getItem(uniqueKey) || localUnique)
+  );
 }
 
 layout();
 select("steven", false);
-setMeta(null);
 trackVisits();
 window.addEventListener("resize", resize);
 window.addEventListener("orientationchange", () => setTimeout(resize, 250));
