@@ -2,7 +2,7 @@
    Sources: family Hofbuch, 1997 descendant chart, obituaries, passenger list,
    house plaque and cemetery photos from Dingstede, 2011 visit.
 */
-const APP_VERSION = "1.9.6";
+const APP_VERSION = "1.9.7";
 
 const PEOPLE = {
   hof: {
@@ -206,17 +206,21 @@ const PEOPLE = {
     id: "dale",
     name: "Dale Frederick Schnier",
     dates: "son of Gerald · pallbearer 1978",
-    role: "Father of Steven and Tiffany",
+    role: "Father of Steven and Tiffany · pilot, CDL, auctioneer",
     generation: 1,
-    bio: "Dale Frederick Schnier is the second son of Gerald and Delora on the 1997 chart. He married Sandra Oehlerts (the chart marks the marriage as later divorced). Their children are Tiffany and Steven. Dale was a pallbearer at his grandfather G. H. Schnier’s funeral in Pender on 1 May 1978. Public place indexes associate him with Sergeant Bluff, Iowa, and later Nocona, Texas. Family accounts also note Air National Guard service.",
+    bio: "Dale Frederick Schnier is the second son of Gerald and Delora on the 1997 chart. He married Sandra Oehlerts (the chart marks the marriage as later divorced). Their children are Tiffany and Steven. Dale was a pallbearer at his grandfather G. H. Schnier’s funeral in Pender on 1 May 1978. Public place indexes associate him with Sergeant Bluff, Iowa, and later Nocona, Texas. Family accounts also note Air National Guard service. He taught himself and took courses for a wide set of working skills: welding, plumbing, electrical work, machining, heavy-equipment operation, and practical problem-solving. He also held a private pilot license, a commercial pilot license, a real estate license, herbicide and pesticide applicator licenses, an auctioneer license, and a commercial driver’s license with hazardous-materials, tanker, passenger, and school-bus endorsements.",
     facts: [
       "Pallbearer, G. H. Schnier funeral, 1 May 1978, with Lanny Schnier, Leland Schnier, Dennis Johnson, Clayton Cooper and Mert Nixon.",
       "1997 chart: Dale *2 (# Sandra) — Tiffany *3, Steven *3 (& Lori).",
-      "Public indexes: Sergeant Bluff, Iowa; Nocona, Texas."
+      "Public indexes: Sergeant Bluff, Iowa; Nocona, Texas.",
+      "Licenses: private pilot; commercial pilot; real estate; herbicide applicator; pesticide applicator; auctioneer.",
+      "CDL with hazardous-materials, tanker, passenger, and school-bus endorsements.",
+      "Hands-on skills: welder, plumber, electrician, machinist, heavy-equipment operator."
     ],
     sources: [
       "1997 descendant chart; G. H. funeral folder; family.",
-      "Public people indexes listing Dale F. / Dale Frederick Schnier with Tiffany Lockman and Steven Schnier."
+      "Public people indexes listing Dale F. / Dale Frederick Schnier with Tiffany Lockman and Steven Schnier.",
+      "Steven Schnier, family note on Dale’s licenses and trade skills, 4 October 2026."
     ]
   },
   sandra: {
